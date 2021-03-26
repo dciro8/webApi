@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8psBDDg6vdTqnSKdWIXENUF1u20nCEKrYR/We3gbFwHSFBRfTFR9wq/H3U+N+0GizLO4Nrc3gTPt9pZSLcox9Q==",
+  "success": true,
+  "projectFilePath": "/Users/dciro/Documents/webApi/catalog/catalog.csproj",
+  "expectedPackageFiles": [
+    "/Users/dciro/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/dciro/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/dciro/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/dciro/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/dciro/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/dciro/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
