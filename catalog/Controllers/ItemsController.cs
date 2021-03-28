@@ -6,6 +6,7 @@ using System;
 using Catalog.Repositories;
 using System.Linq;
 using Catalog.Dtos;
+using Catalog;
 
 namespace catalog.Controllers
 {
@@ -20,32 +21,45 @@ namespace catalog.Controllers
 
         public ItemsController(IItemsRepository repository)
         {
-           this.repository =  repository;
+            this.repository = repository;
         }
         //get /Items
         [HttpGet]
         public IEnumerable<ItemDto> GetItems()
         {
             var items = repository.GetItems()
-            .Select(item => new ItemDto{
-                Id=item.Id,
-                Name=item.Name,
-                Price=item.Price,
-                CreatedDate=item.CreatedDate
-            });
+            .Select(item => item.AsDto());
             return items;
         }
         //Get / items/ID
         [HttpGet("{id}")]
-        public ActionResult<Item> GetItem(Guid id)
+        public ActionResult<ItemDto> GetItem(Guid id)
         {
             var item = repository.GetItem(id);
 
-            if (item is null){
+            if (item is null)
+            {
                 return NotFound();
             }
 
-            return item;
+            return item.AsDto();
         }
+
+        [HttpPost]
+        public ActionResult<ItemDto> createItem(CreatedItemDto itemDto)
+        {
+
+            Item item= new Item(){
+               Id= Guid.NewGuid(),
+               Name= itemDto.Name,
+               Price=itemDto.Price,
+               CreatedDate= DateTimeOffset.UtcNow
+
+            };
+
+            repository.CreateItem(item);
+            return CreatedAtAction(nameof(GetItem), new {id=item.Id},item.AsDto());
+        }
+
     }
 }

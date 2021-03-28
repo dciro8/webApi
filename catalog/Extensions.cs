@@ -5,12 +5,15 @@ namespace Catalog
 {
     public static class Extensions
     {
-        public static ItemDto AsDto(this Item item) => new ItemDto
+        public static ItemDto AsDto(this Item item)
         {
-            Id = item.Id,
-            Name = item.Name,
-            Price = item.Price,
-            CreatedDate = item.CreatedDate
-        };
+            return new ItemDto
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Price = item.Price,
+                CreatedDate = item.CreatedDate
+            };
+        }
     }
 }
