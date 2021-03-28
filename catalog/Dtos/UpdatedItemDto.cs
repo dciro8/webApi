@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Catalog.Dtos
 {
-    public record CreatedItemDto
+    public record UpdateItemDto
     {
         [Required]
         [Range(1, 1000)]
